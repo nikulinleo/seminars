@@ -41,8 +41,7 @@ public:
 	}
 
 	void buy(){
-
-		if(!cin) cout << "Введите название продукта: ";
+		if(cin.peek() == '\n') cout << "Введите название продукта: ";
 
 		char _name[100];
 		char sym;
@@ -64,10 +63,14 @@ public:
 		int _quantity;
 
 		cout << "Введите цену продукта и количество: ";
-		do{
-		
-		}
  		cin >> std::skipws >> _price >> _quantity;
+		while(cin.fail() || _price < 0 || _quantity <= 0){
+			if(cin.fail()) cout << "Не удалось считать числа, попробуйте еще раз: ";
+			else cout << "Некорректные числа, попробуйте еще раз: ";
+			cin.clear();
+			cin.ignore(9999, '\n');
+	 		cin >> std::skipws >> _price >> _quantity;
+		}
 
 		Product* p = new Product(_name, _price, _quantity); 
 		Product** temp = new Product*[len+1];
