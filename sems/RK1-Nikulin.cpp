@@ -41,7 +41,8 @@ public:
 	}
 
 	void buy(){
-		cout << "Введите название продукта: ";
+
+		if(!cin) cout << "Введите название продукта: ";
 
 		char _name[100];
 		char sym;
@@ -63,6 +64,9 @@ public:
 		int _quantity;
 
 		cout << "Введите цену продукта и количество: ";
+		do{
+		
+		}
  		cin >> std::skipws >> _price >> _quantity;
 
 		Product* p = new Product(_name, _price, _quantity); 
@@ -107,11 +111,15 @@ int main(){
 	Shop s;
 	char comand[100];
 	do{
-		cout << "Что Вы хотите сделать? Купить/Итог/Конец: ";
+		cout << "Что Вы хотите сделать? Купить/Подытог/Конец: ";
 		cin >> comand;
 		if(!strcmp(comand, "Купить")) s.buy();
-		else if(!strcmp(comand, "Итог")) cout << s;
-		else break;
+		else if(!strcmp(comand, "Подытог")) cout << s;
+		else if(strcmp(comand, "Конец")) cout << "Неизвестный ввод, попробуйте еще раз." << endl;
+		else{
+			cout << s;
+			break;
+		}
 	}while(strcmp(comand, "Конец"));
 	return 0; 
 }
