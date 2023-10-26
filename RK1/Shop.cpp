@@ -19,7 +19,7 @@ void Shop::buy(){
     for(int i = 0; i < 100; _name[i++] = '\0');
     std::cin >> std::noskipws;
     std::cin.getline(_name, 99); // считаем остаток буфера, если после buy ничего не было, останется \n
-    while (std::iswspace(_name[0])) for(int i = 0; i < 99; _name[i-1] = _name[++i]); // убираем пробельные символы из начала строки
+    while (std::iswspace(_name[0])) for(int i = 0; i < 99; _name[i] = _name[i+1], ++i); // убираем пробельные символы из начала строки
     if(strlen(_name) == 0){
         std::cout << "Enter the product name: "; // если после пробельных символов ничего не было, то выведем приглашение
         std::cin.getline(_name, 99); // считаем название
