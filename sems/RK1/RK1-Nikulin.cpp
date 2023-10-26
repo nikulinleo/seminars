@@ -6,15 +6,14 @@ int main(){
 	Shop s;
 	char comand[100];
 	do{
-		cout << "Что Вы хотите сделать? Купить/Подытог/Конец: ";
+		cout << "What do you want to do? buy/check/end: ";
 		cin >> comand;
-		if(!strcmp(comand, "Купить")) s.buy();
-		else if(!strcmp(comand, "Подытог")) cout << s;
-		else if(strcmp(comand, "Конец")) cout << "Неизвестный ввод, попробуйте еще раз." << endl;
+		if(!strcmp(comand, "buy")) s.buy(); // если после buy что-то было, оно останется в буфере
+		else if(!strcmp(comand, "check")) cout << s;
+		else if(strcmp(comand, "end")) cout << "Unknown comand, try again." << endl;
 		else{
 			cout << s;
-			break;
 		}
-	}while(strcmp(comand, "Конец"));
+	}while(strcmp(comand, "end"));
 	return 0; 
 }
