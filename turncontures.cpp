@@ -1,7 +1,7 @@
 #include <iostream>
 #define SIZE 8
 
-inline int max(float a, float b){
+int max(float a, float b){
 	a *= a > 0? 1 : -1;
 	b *= b > 0? 1 : -1;
 	return a > b? a : b;
