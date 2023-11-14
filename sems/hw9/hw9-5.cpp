@@ -82,6 +82,7 @@ int main(int argc, char* argv[]){
 			}	
 			else break;
 		}
+		file.close();
 
 		std::cout << "Best student is " << best << std::endl;
 	}

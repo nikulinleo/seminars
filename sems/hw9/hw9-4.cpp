@@ -42,6 +42,8 @@ int main(int argc, char* argv[]){
 				word = temp;
 			}
 		}
+		
+		file.close();
 
 		std::cout << "Longest word is \"" << longestword << "\"" << std::endl;
 		std::cout << "It's length is " << maxcnt << std::endl;

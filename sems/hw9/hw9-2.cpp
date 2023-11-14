@@ -41,6 +41,7 @@ int main(int argc, char* argv[]){
 		}
 	}
 	
+	output.close();
 	delete[] files; 
 
 	std::cout << "Merge finished" << std::endl;

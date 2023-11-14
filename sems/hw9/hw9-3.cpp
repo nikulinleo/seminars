@@ -33,6 +33,8 @@ int main(int argc, char* argv[]){
 			}
 			if(file.eof()) break; 
 		} 
+
+		file.close();
 		std::cout << "Average age is " << avgage << std::endl;
 		std::cout << "Average salary is " << avgsal << std::endl;
 	}
