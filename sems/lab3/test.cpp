@@ -186,7 +186,7 @@ int main(int argc, char* argv[]){
 					bool f(true);
 					int a;
 					std::cin >> a;
-					Book c(nullptr, nullptr, a);
+					Book c("", "", a);
 					for(Book& b : lib){
 						if(b < c){
 							std::cout << b << std::endl;
