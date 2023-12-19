@@ -143,7 +143,7 @@ int main(int argc, char* argv[]){
 				}
 			}
 			else if(!strcmp(comand, "search")){
-				std::cout << "Do you want to ssearch by author, name, year or yearbefore? ";
+				std::cout << "Do you want to search by author, name, year or yearbefore? ";
 				std::cin >> comand;
 				if(!strcmp(comand, "author")){
 					bool f(true);
